@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número informado</title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+        #num{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Número informado</h1>
+        <label for="numero">
+            <h2> Digite um número </h2>
+            <input type="number" step="0.01" name="num" id="num"> <br>
+        </label>
+        <br> <input type="submit" value="Enviar" id="enviar"> <br>
+        <h2>
+            <div id="resultadoNumero">
+        </h2>
+        </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let numero = document.getElementById("num");
+        let resultadoNum = document.getElementById("resultadoNumero");
+        form.addEventListener("submit", function (informaNumero) {
+            resultadoNum.innerText = "O número informado foi " + numero.value;
+            informaNumero.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

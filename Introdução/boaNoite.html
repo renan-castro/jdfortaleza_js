@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boa noite</title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+        #nome{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Boa noite</h1>
+        <label for="nome">
+            <h2> Digite seu nome </h2>
+            <input type="text" name="nome" id="nome"> <br>
+        </label>
+        <br> <input type="submit" value="Enviar" id="enviar"> <br>
+        <h2>
+            <div id="boaNoite">
+        </h2>
+        </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let nome = document.getElementById("nome");
+        let resultadoBoaNoite = document.getElementById("boaNoite");
+        form.addEventListener("submit", function (ResulBoaNoite) {
+            resultadoBoaNoite.innerText = "Boa noite " + nome.value + " !";
+            ResulBoaNoite.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

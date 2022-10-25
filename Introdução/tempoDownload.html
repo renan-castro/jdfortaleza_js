@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tempo de Download </title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+
+        #tamArquivo {
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        #velLink {
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Tempo aproximado de Download</h1>
+        <label for="tamanhoArquivo">
+            <h2> Digite o tamanho do arquivo em MB </h2>
+            <input type="n" name="tamArquivo" step="0.01" id="tamArquivo"> <br>
+            <label for="velocidadeLink">
+                <h2> Digite a velocidade do link de internet em Mbps </h2>
+                <input type="number" name="velLink" step="0.01" id="velLink"> <br>
+            </label>
+            <br> <input type="submit" value="Enviar" id="enviar"> <br>
+            <h2>
+                <div id="tempoAproximado">
+            </h2>
+            </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let tamArquivo = document.getElementById("tamArquivo");
+        let velLink = document.getElementById("velLink");
+        let TempoDownload = document.getElementById("tempoAproximado");
+        form.addEventListener("submit", function (TempDownlod) {
+            TempoDownload.innerText = "O tempo aproximado de download é " + ((parseFloat(tamArquivo.value) / parseFloat(velLink.value)) / 60);
+            TempDownlod.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

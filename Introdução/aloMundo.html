@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alo Mundo</title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Primeira mensagem em JavaScript</h1>
+        <label for="msgAloMundo" id="msgAloMundo">
+            <h2> Presione o botão abaixo </h2>
+        </label>
+        <input type="submit" value="Botão" id="enviar"> <br>
+        <br>
+        <h2>
+            <div id="resultadoAloMundo">
+        </h2>
+        </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let aloMundo = document.getElementById("resultadoAloMundo");
+        form.addEventListener("submit", function (mensagemAloMundo) {
+            aloMundo.innerText = "Alo Mundo!";
+            mensagemAloMundo.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

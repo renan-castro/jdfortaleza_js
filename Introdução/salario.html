@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário</title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+        #gHora{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        #nHora{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Salário</h1>
+        <label for="ganhosHoras">
+            <h2> Quanto você ganha por hora ? </h2>
+            <input type="number" step="0.01" name="gHora" id="gHora"> <br>
+            <label for="horasMês">
+                <h2> Qual seu número de horas trabalhadas por mês ? </h2>
+                <input type="number" name="nHora" id="nHora"> <br>
+        </label>
+        <br> <input type="submit" value="Enviar" id="enviar"> <br>
+        <h2>
+            <div id="totalSalario"></div>
+    
+        </h2>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let totalSalario = document.getElementById("totalSalario");
+        let ganhosHora = document.getElementById("gHora");
+        let numeroHoras = document.getElementById("nHora");
+        form.addEventListener("submit", function (salario) {
+            totalSalario.innerText = "O seu salário total no mês é " + parseFloat(ganhosHora.value) * parseFloat(numeroHoras.value) + " R$";
+            salario.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

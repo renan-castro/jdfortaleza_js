@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        body {
+            background-color: #64B2A1;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #C2FFF2;
+        }
+
+        #formulario {
+            color: #A9FFEC;
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+        #num{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Antecessor e sucessor de um número</h1>
+        <label for="numero">
+            <h2> Digite um número </h2>
+            <input type="number" name="num" id="num"> <br>
+        </label>
+        <br> <input type="submit" value="Enviar" id="enviar"> <br>
+        <h2>
+            <div id="antecessor"></div>
+            <div id="sucessor"></div>
+        </h2>
+    </form>
+
+    <script>
+        let form = document.getElementById("formulario");
+        let numero = document.getElementById("num");
+        let antecessorNum = document.getElementById("antecessor");
+        let sucessorNum = document.getElementById("sucessor");
+        form.addEventListener("submit", function (antecessorEsucessor) {
+            antecessorNum.innerText = "O antecessor do número " + numero.value + " é " + (parseInt(numero.value) - 1);
+            sucessorNum.innerText = "O sucessor do número " + numero.value + " e " + (parseInt(numero.value) + 1);
+            antecessorEsucessor.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

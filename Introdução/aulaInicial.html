@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+
+        <h1> Meu primeiro arquivo JavaScript </h1>
+        Digite seu número:
+        <input type="number" name="n1" id="n1">
+        Digite o segundo número:
+        <input type="number" name="n2" id="n2">
+        <input type="submit" value="Enviar">
+        <div id="resultadoSoma"></div>
+        <div id="resultadoSub"></div>
+        <div id="resultadoMult"></div>
+        <div id="resultadoDiv"></div>
+
+    </form>
+
+    <script>
+
+        let resultadoSoma = document.getElementById("resultadoSoma");
+        let resultadoSub = document.getElementById("resultadoSub");
+        let resultadoMult = document.getElementById("resultadoMult");
+        let Div = document.getElementById("resultadoDiv");
+        let formulario = document.getElementById("formulario");
+        let n1 = document.getElementById("n1");
+        let n2 = document.getElementById("n2");
+        formulario.addEventListener("submit", function (operacoes) {
+            resultadoSoma.innerText = parseInt(n1.value) + parseInt(n2.value);
+            resultadoSub.innerText = parseInt(n1.value) - parseInt(n2.value);
+            resultadoMult.innerText = parseInt(n1.value) * parseInt(n2.value);
+            Div.innerText = parseInt(n1.value) / parseInt(n2.value);
+            operacoes.preventDefault();
+        });
+
+    </script>
+
+</body>
+
+</html>
