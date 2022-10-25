@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir o maior número  e menor entre 3</title>
+    <style>
+        body {
+            background-color: #760606;
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #formulario {
+            color: white;
+
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+
+        #n1,
+        #n2,
+        #n3 {
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Três números e imprimir o maior e <br> menor</h1>
+        <label for="numero">
+            <h2> Digite o número: </h2>
+        </label>
+        <input type="number" name="n1" id="n1">
+        <label for="numero2">
+            <h2> Digite o segundo número: </h2>
+        </label>
+        <input type="number" name="n2" id="n2"> <br>
+        <label for="numero3">
+            <h2> Digite o terceiro número: </h2>
+        </label>
+        <input type="number" name="n3" id="n3"> <br>
+        <br> <input type="submit" value="Enviar" id="enviar">
+        <h2>
+            <div id="Valor"> </div>
+        </h2>
+    </form>
+    <script>
+        let n1 = document.getElementById("n1");
+        let n2 = document.getElementById("n2");
+        let n3 = document.getElementById("n3");
+        let form = document.getElementById("formulario");
+        let resultado = document.getElementById("Valor");
+        form.addEventListener("submit", function (idadeN) {
+            if((parseFloat(n1.value) > parseFloat(n2.value)) && (parseFloat(n1.value) > parseFloat(n3.value))){
+                resultado.innerText = "O valor maior é " + n1.value;
+            }else if((parseFloat(n2.value) > parseFloat(n1.value)) && (parseFloat(n2.value) > parseFloat(n3.value))){
+                resultado.innerText = "O valor maior é " + n2.value;
+            }else{
+                resultado.innerText = "O valor maior é " + n3.value;  
+            }
+            idadeN.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

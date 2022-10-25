@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias da semana</title>
+    <style>
+        body {
+            background-color: #760606;
+            margin-top: 160px;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #formulario {
+            color: white;
+            
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+
+        #sexo{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Dias da semana</h1>
+        <label for="numero"> <h2> Digite o número da semana <br> correspondente: (1- Domingo, 2- Segunda, etc): </h2> </label> 
+        <input type="text" name="dia" id="dia"> <br>
+        <br> <input type="submit" value="Enviar" id="enviar">
+        <h2> <div id="Valor"> </div> </h2>
+    </form>
+    <script>
+        diaSem = document.getElementById("dia");
+        form = document.getElementById("formulario");
+        resultado = document.getElementById("Valor");
+        form.addEventListener("submit", function (idadeN) {
+            if(diaSem.value == "1") {
+                resultado.innerText = "O dia da semana é Domingo";
+            }else  if(diaSem.value == "2"){
+                resultado.innerText = "O dia da semana é Segunda";
+            }else  if(diaSem.value == "3"){
+                resultado.innerText = "O dia da semana é Terça";
+            }else  if(diaSem.value == "4"){
+                resultado.innerText = "O dia da semana é Quarta";
+            }else  if(diaSem.value == "5"){
+                resultado.innerText = "O dia da semana é Quinta";
+            }else  if(diaSem.value == "6"){
+                resultado.innerText = "O dia da semana é Sexta";
+            }else  if(diaSem.value == "7"){
+                resultado.innerText = "O dia da semana é Sábado";
+            }else{
+                resultado.innerText = "Valor inválido";
+            }
+            idadeN.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

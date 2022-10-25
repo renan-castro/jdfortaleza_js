@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir o maior número</title>
+    <style>
+        body {
+            background-color: #760606;
+            margin-top: 160px;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #formulario {
+            color: white;
+            
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+
+        #n1, #n2{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Dois números e imprimir o maior</h1>
+        <label for="numero"> <h2> Digite o número: </h2> </label> 
+        <input type="number" name="n1" id="n1">
+        <label for="idade"> <h2> Digite o segundo número: </h2> </label>
+        <input type="number" name="n2" id="n2"> <br>
+        <br> <input type="submit" value="Enviar" id="enviar">
+        <h2> <div id="Valor"> </div> </h2>
+    </form>
+    <script>
+        num1 = document.getElementById("n1");
+        num2 = document.getElementById("n2");
+        form = document.getElementById("formulario");
+        resultado = document.getElementById("Valor");
+        form.addEventListener("submit", function (idadeN) {
+            if ((parseInt(num1.value)) > (parseInt(num2.value))) {
+                resultado.innerText = "O valor maior é " + (num1.value);
+            } else {
+                resultado.innerText = "O valor maior é " + (num2.value);
+            }
+            idadeN.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

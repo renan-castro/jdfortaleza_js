@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feminino ou Masculino</title>
+    <style>
+        body {
+            background-color: #760606;
+            margin-top: 160px;
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #formulario {
+            color: white;
+            
+        }
+
+        #enviar {
+            width: 60px;
+            height: 50px;
+            color: black;
+            border-radius: 35%;
+            border: none;
+        }
+
+        #sexo{
+            width: 180px;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="formulario">
+        <h1>Positivo ou Negativo</h1>
+        <label for="numero"> <h2> Digite o sexo (F ou M): </h2> </label> 
+        <input type="text" name="sexo" id="sexo"> <br>
+        <br> <input type="submit" value="Enviar" id="enviar">
+        <h2> <div id="Valor"> </div> </h2>
+    </form>
+    <script>
+        sexo = document.getElementById("sexo");
+        form = document.getElementById("formulario");
+        resultado = document.getElementById("Valor");
+        form.addEventListener("submit", function (idadeN) {
+            if(sexo.value == "M" || sexo.value == "m") {
+                resultado.innerText = "Seu sexo é Masculino";
+            }else  if(sexo.value == "F" || sexo.value == "f"){
+                resultado.innerText = "Seu sexo é Feminino";
+            }else{
+                resultado.innerText = "Sexo inválido";
+            }
+            idadeN.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
